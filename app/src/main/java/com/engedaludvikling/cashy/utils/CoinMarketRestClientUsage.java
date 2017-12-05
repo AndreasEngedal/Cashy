@@ -28,7 +28,7 @@ public class CoinMarketRestClientUsage {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 // If the response is JSONObject instead of expected JSONArray
                 try {
-                    mDelegate.updateValues(response.getDouble("price_usd"));
+                    mDelegate.updateValues(response.getDouble("last_price"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -39,7 +39,7 @@ public class CoinMarketRestClientUsage {
                 // Pull out the first event on the public timeline
                 try {
                     JSONObject firstEvent = timeline.getJSONObject(0);
-                    mDelegate.updateValues(firstEvent.getDouble("price_usd"));
+                    mDelegate.updateValues(firstEvent.getDouble("last_price"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -1,5 +1,6 @@
 package com.engedaludvikling.cashy;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,7 +53,16 @@ public class MainActivity extends AppCompatActivity {
         btnDKK = findViewById(R.id.btn_dkk);
         btnDollars = findViewById(R.id.btn_dollars);
 
-        startHttpRequest();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                startHttpRequest();
+                updateValues(mCurrentPrice);
+                handler.postDelayed(this, 5000);
+            }
+        }, 0);
+
+
     }
 
     private void startHttpRequest() {

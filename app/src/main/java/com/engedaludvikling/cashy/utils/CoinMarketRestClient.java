@@ -7,7 +7,7 @@ package com.engedaludvikling.cashy.utils;
 import com.loopj.android.http.*;
 
 public class CoinMarketRestClient {
-    private static final String BASE_URL = "https://api.coinmarketcap.com/v1/ticker/iota/";
+    private static final String BASE_URL = "https://api.bitfinex.com/v1/pubticker/iotusd";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
