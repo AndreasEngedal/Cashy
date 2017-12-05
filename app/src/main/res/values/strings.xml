@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Cashy</string>
+
+    <string name="dollars">$%1$s</string>
+    <string name="dkk">%1$s kr</string>
+</resources>
